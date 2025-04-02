@@ -1,2 +1,0 @@
-# sobre-mi
-sobre mi
