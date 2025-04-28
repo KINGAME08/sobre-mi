@@ -5,7 +5,14 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
+.galeria-container {
+    width: 410px;
+    height: 170px;
+    margin: 0 auto;
+    background-color: #FEFEFF;
+    padding: 20px;
+    box-sizing: border-box;
+}
 img {
 width: 400px;
     height: 400px;
@@ -72,14 +79,7 @@ header {
 .menu.active {
     display: flex;
 }
-.galeria-container {
-    width: 410px;
-    height: 170px;
-    margin: 0 auto;
-    background-color: #FEFEFF;
-    padding: 20px;
-    box-sizing: border-box;
-}
+
 /* Estilos para pantallas grandes */
 @media (min-width: 768px) {
     .menu {
