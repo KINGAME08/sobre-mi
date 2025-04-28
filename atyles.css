@@ -72,7 +72,14 @@ header {
 .menu.active {
     display: flex;
 }
-
+.galeria-container {
+    width: 410px;
+    height: 170px;
+    margin: 0 auto;
+    background-color: #6867FF;
+    padding: 20px;
+    box-sizing: border-box;
+}
 /* Estilos para pantallas grandes */
 @media (min-width: 768px) {
     .menu {
