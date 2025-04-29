@@ -1,3 +1,8 @@
+.centrado {
+    font-family: monthserrat;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
 * {
     margin: 0;
     padding: 0;
