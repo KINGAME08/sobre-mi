@@ -5,37 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>musica</title>
     <link rel="stylesheet" href="atyles.css">
-</head>
-<body>
     <style>
         body {
-    background-image: url('loop.jpg');
-            background-size: contain; 
+            margin: 0;
+            background-image: url('loop.jpg');
+            background-size: cover;
             background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            height: calc(100vh - 80px); /* Ajusta si tu header cambia de tamaño */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenedor-translucido {
+            background-color: rgba(255, 255, 255, 0.8); /* Blanco translúcido */
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px); /* Efecto tipo glass */
+        }
+
+        .contenedor-translucido h1,
+        .contenedor-translucido p {
+            color: #000;
+            margin: 10px 0;
+        }
+
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
         }
     </style>
+</head>
+<body>
     <header>
         <div class="logo">musica</div>
-        <button class="menu-toggle" id="menu-toggle">
-            ☰
-        </button>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
         <nav class="menu" id="menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="musica.html">musica</a></li>
                 <li><a href="videojuegos.html">videojuegos</a></li>
                 <li><a href="series.html">series</a></li>
-
             </ul>
         </nav>
     </header>
-<main>
-    <div class="contenedor-translucido">
-        <h1 style="color: white;">Bienvenido a nuestra Tienda Online</h1>
-<p style="color: white;">Explora nuestras categorías y encuentra las mejores ofertas.</p>
 
-    </div>
-</main>
+    <main>
+        <div class="contenedor-translucido">
+            <h1>Bienvenido a nuestra Tienda Online</h1>
+            <p>Explora nuestras categorías y encuentra las mejores ofertas.</p>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
