@@ -121,13 +121,14 @@ header {
  .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.5)
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 25px 25px;
   gap: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  position: absolute;
 }
 
 /* for all social containers*/
