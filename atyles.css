@@ -121,7 +121,7 @@ header {
  .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238, 0.055);
   display: flex;
   flex-direction: column;
   align-items: center;
