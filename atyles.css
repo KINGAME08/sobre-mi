@@ -32,7 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #B0FFDB;
+    background: #333;
     color: white;
     padding: 15px 20px;
 }
@@ -121,7 +121,7 @@ header {
  .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgba(238, 238, 238)
+  background-color: rgb(238, 238, 238);
   display: flex;
   align-items: center;
   justify-content: center;
