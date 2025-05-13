@@ -7,6 +7,7 @@
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
+    /* La imagen de fondo ya está en el <style> del HTML, puedes moverla aquí si prefieres */
 }
 
 .contenedor {
@@ -26,7 +27,7 @@ body {
   width: 90%;
   max-width: 1200px;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 90vh; /* Asegura que el contenedor no sea más alto que la pantalla */
 }
 
 img {
@@ -38,6 +39,7 @@ img {
   border-radius: 4px;
 }
 
+/* .galeria-container no se usa en el HTML proporcionado, puedes eliminarlo o mantenerlo si lo usas en otro lado */
 .galeria-container {
     width: 100%;
     max-width: 320px;
@@ -54,7 +56,7 @@ header {
     color: gray;
     padding: 15px 10px;
     position: relative;
-    z-index: 1000;
+    z-index: 1000; /* z-index para el header */
 }
 
 .logo {
@@ -101,7 +103,7 @@ header {
     font-size: 2em;
     color: white;
     cursor: pointer;
-    display: block;
+    display: block; /* Visible en móvil por defecto */
 }
 
 .menu.active {
@@ -116,21 +118,23 @@ header {
     padding: 10px 0;
 }
 
+/* Estilos base de la card (se modificarán en media queries) */
 .card {
   width: fit-content;
-  max-width: 100%;
   height: fit-content;
   background-color: rgba(238, 238, 238, 0.055);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   gap: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
   border-radius: 8px;
+  /* Por defecto para desktop, se ajustará para móvil */
+  flex-direction: column; 
 }
-.card img {
+
+.card img { /* Si tienes imágenes dentro de la card */
     max-width: 100%;
 }
 
@@ -175,7 +179,7 @@ header {
   width: 19px;
 }
 .largeIcon {
-  width: 27px;
+  width: 27px; /* SVG de TikTok y Facebook son más grandes */
 }
 .socialSvg path {
   fill: rgb(255, 255, 255);
@@ -196,13 +200,95 @@ header {
   }
 }
 
+/* Estilos para el botón de mostrar/ocultar la card */
+.toggle-card-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex; /* Para centrar el SVG */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1005; /* Encima de la card y el header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-card-button svg {
+    transition: transform 0.3s ease; /* Transición para la rotación de la flecha */
+}
+
+.toggle-card-button.card-is-visible svg {
+    transform: rotate(180deg); /* Flecha hacia abajo cuando la card está visible */
+}
+
+
+/* --- Estilos para móviles (hasta 767px) --- */
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: block; /* Asegurar que el toggle del menú sea visible */
+    }
+    .menu { /* Estilos del menú desplegable ya están definidos arriba */
+        /* display: none; por defecto */
+    }
+    .menu.active {
+        display: flex;
+    }
+
+    .card {
+        position: fixed; /* Posición fija en la parte inferior */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.95); /* Fondo oscuro para la card en móvil */
+        transform: translateY(100%); /* Inicialmente oculta (desplazada hacia abajo) */
+        transition: transform 0.4s ease-in-out; /* Animación suave */
+        z-index: 1001; /* Por encima del contenido, debajo del botón de toggle si se superponen */
+        border-top-left-radius: 15px; /* Bordes redondeados solo arriba */
+        border-top-right-radius: 15px;
+        padding: 10px 15px; /* Padding ajustado */
+        box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2); /* Sombra superior */
+        flex-direction: row; /* Iconos en fila */
+        justify-content: space-around; /* Distribuir iconos */
+        align-items: center;
+        gap: 10px; /* Espacio entre iconos */
+        height: auto; /* Altura automática */
+    }
+
+    .card.visible {
+        transform: translateY(0); /* Mostrar la card (desplazar a su posición) */
+    }
+
+    .socialContainer { /* Ajustar tamaño de contenedores de iconos en móvil */
+        width: 40px;
+        height: 40px;
+    }
+    .socialSvg { /* Ajustar tamaño de SVGs en móvil */
+        width: 16px;
+    }
+    .largeIcon {
+        width: 22px;
+    }
+
+    /* El botón de toggle para la card es visible por defecto en todas las vistas,
+       pero se oculta en desktop con la siguiente media query */
+}
+
+
+/* --- Estilos para tablets y escritorio (768px en adelante) --- */
 @media (min-width: 768px) {
     header {
         padding: 15px 20px;
     }
 
-    .menu {
-        display: flex;
+    .menu { /* Menú horizontal en escritorio */
+        display: flex !important; /* Sobrescribir display: none y .active */
         position: static;
         flex-direction: row;
         width: auto;
@@ -223,10 +309,42 @@ header {
     }
 
     .menu-toggle {
-        display: none;
+        display: none; /* Ocultar botón de menú hamburguesa */
     }
 
+    /* Restaurar estilos de la card para escritorio */
     .card {
-        max-width: 350px;
+        position: static; /* Vuelve al flujo normal del documento */
+        transform: none;  /* Sin transformaciones */
+        width: fit-content; 
+        max-width: 350px;  /* Ancho máximo en escritorio */
+        height: fit-content;
+        background-color: rgba(238, 238, 238, 0.055);
+        flex-direction: column; /* Iconos en columna */
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+        border-radius: 8px; /* Bordes redondeados normales */
+        transition: none; /* Sin transición de aparición/desaparición */
+        /* Asegurar que no tenga estilos específicos de móvil como border-top-radius */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .socialContainer { /* Restaurar tamaño original de iconos */
+        width: 52px;
+        height: 52px;
+    }
+    .socialSvg {
+        width: 19px;
+    }
+    .largeIcon {
+        width: 27px;
+    }
+
+    .toggle-card-button {
+        display: none; /* Ocultar el botón de la flecha en escritorio */
     }
 }
