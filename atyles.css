@@ -29,8 +29,8 @@ body {
 .contenedor > h1,
 .contenedor > h3,
 .contenedor > p {
-    width: 100%; /* Fuerza a cada uno a ocupar su propia línea */
-    text-align: center; /* Mantiene el texto centrado, puedes ajustarlo (left, right) si prefieres */
+    width: 100%; 
+    text-align: center;
 }
 img { 
   max-width: 60%;
@@ -337,4 +337,9 @@ header {
     .toggle-card-button {
         display: none;
     }
+}
+@media (max-width: 600px) {
+  .contenedor {
+    padding-top: 40px;
+  }
 }
