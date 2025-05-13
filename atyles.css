@@ -23,8 +23,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  width: 90%;
-  max-width: 1200px;
+  width: 85%;
+  max-width: 900px;
 }
 .contenedor > h1,
 .contenedor > h3,
