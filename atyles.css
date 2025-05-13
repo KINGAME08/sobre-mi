@@ -115,22 +115,22 @@ header {
 
 .menu-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   color: white;
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease;
-  background-color: transparent;
+  background-image: url('dr.jpg'); 
+  background-size: 200% auto;
+  background-position: left center;
+  background-repeat: no-repeat;
+  transition: background-position 0.6s ease, transform 0.3s ease;
+  border-radius: 8px;
 }
 
 
 .menu-btn:hover {
-  background-image: url('dr.jpg'); 
-  background-size: cover;
-  background-position: center;
-  color: #B2B6FF; 
+  background-position: up center; 
   transform: scale(1.05);
-  border-radius: 8px;
 }
 
 .card {
