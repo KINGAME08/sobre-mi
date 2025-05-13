@@ -113,12 +113,24 @@ header {
     display: flex;
 }
 
-.centrado {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 1.5em;
-    padding: 10px 0;
+.menu-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+
+.menu-btn:hover {
+  background-image: url('dr.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: #B2B6FF; 
+  transform: scale(1.05);
+  border-radius: 8px;
 }
 
 .card {
