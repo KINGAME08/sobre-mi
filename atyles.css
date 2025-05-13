@@ -26,23 +26,18 @@ body {
   width: 90%;
   max-width: 1200px;
 }
-
-/* --- NUEVA REGLA --- */
-/* Para asegurar que los bloques de texto principales en .contenedor ocupen todo el ancho */
 .contenedor > h1,
 .contenedor > h3,
 .contenedor > p {
     width: 100%; /* Fuerza a cada uno a ocupar su propia línea */
     text-align: center; /* Mantiene el texto centrado, puedes ajustarlo (left, right) si prefieres */
 }
-/* --- FIN DE NUEVA REGLA --- */
-
-img { /* Estilo global, la imagen dentro de .contenedor usará esto */
-  max-width: 50%; /* La imagen no ocupará todo el ancho, se centrará por el justify-content del .contenedor */
+img { 
+  max-width: 60%;
   height: auto;
-  display: block; /* display: block en un ítem flex es el comportamiento por defecto (blockified) */
-  margin-left: auto; /* Para centrar la imagen si es display:block y no un flex item directo */
-  margin-right: auto; /* Para centrar la imagen */
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.9s ease, transform 0.2s ease;
   border-radius: 4px;
@@ -50,9 +45,9 @@ img { /* Estilo global, la imagen dentro de .contenedor usará esto */
 
 .galeria-container {
     width: 100%;
-    max-width: 320px;
-    margin: 10px auto;
-    padding: 15px;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 20px;
     box-sizing: border-box;
 }
 
