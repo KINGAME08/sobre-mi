@@ -1,54 +1,92 @@
+/* ---- Reseteo Global y Fuentes ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Fuente de respaldo */
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif; /* Aplica Montserrat si está disponible */
+    /* Considera un fondo para la página si .contenedor es translúcido */
+    /* background-image: url('tu-imagen-de-fondo.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+/* ---- Contenedor Principal ---- */
 .contenedor {
   position: absolute;
   top: 50%;
   left: 50%;
-  flex-wrap: wrap;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.5); /* Blanco translúcido */
   padding: 20px; /* Espacio contra el borde */
   border-radius: 10px; /* Bordes redondeados opcionales */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+
+  /* --- Mejoras Responsivas para .contenedor --- */
+  display: flex;         /* Habilita Flexbox para los hijos */
+  flex-wrap: wrap;       /* Permite que los hijos se envuelvan a la siguiente línea */
+  justify-content: center; /* Centra los hijos horizontalmente */
+  align-items: flex-start; /* Alinea los hijos en la parte superior */
+  gap: 20px;             /* Espacio entre los hijos */
+  width: 90%;            /* Ocupa el 90% del ancho de la ventana */
+  max-width: 1200px;     /* Pero no más de 1200px de ancho */
+  overflow-y: auto;      /* Scroll si el contenido vertical excede */
+  max-height: 90vh;      /* No más alto que el 90% de la altura de la ventana */
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-.galeria-container {
-    width: 250px;
-    height: 170px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
+
+/* ---- Estilos de Imágenes ---- */
 img {
-width: 400px;
-    height: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.9s ease, transform 0.2s ease;
+  /* width: 400px;  -- Eliminado para responsividad */
+  /* height: 400px; -- Eliminado para responsividad */
+  max-width: 100%;   /* Clave para imágenes responsivas */
+  height: auto;      /* Mantiene la proporción de la imagen */
+  display: block;    /* Evita espacio extra debajo de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.9s ease, transform 0.2s ease;
+  border-radius: 4px; /* Opcional: bordes redondeados para imágenes */
 }
-/* Estilos del header */
+
+/* ---- Contenedor de Galería (si es un elemento individual) ---- */
+.galeria-container {
+    /* width: 250px; -- Eliminado */
+    /* height: 170px; -- Eliminado */
+    width: 100%;          /* Ocupa el ancho disponible de su padre */
+    max-width: 320px;     /* Límite de ancho (ajusta según necesidad) */
+    margin: 10px auto;    /* Margen para espaciado si es un bloque */
+    padding: 15px;
+    box-sizing: border-box;
+    /* background-color: #f0f0f0;  Opcional: para visualizarlo */
+    /* border-radius: 8px;         Opcional */
+}
+
+
+/* ---- Estilos del Header ---- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #333;
     color: gray;
-    padding: 15px 20px;
+    padding: 15px 10px; /* Padding ajustado para móviles */
+    position: relative; /* Para el posicionamiento absoluto del menú móvil */
+    z-index: 1000; /* Asegura que el header esté por encima de otros contenidos */
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
+    color: white; /* Mejor contraste */
 }
 
-/* Ocultar el menú por defecto en pantallas pequeñas */
+/* Menú móvil (hamburguesa) */
 .menu {
-    display: none;
+    display: none; /* Oculto por defecto */
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 100%; /* Se posiciona justo debajo del header */
     left: 0;
     width: 100%;
     background: #444;
@@ -57,11 +95,11 @@ header {
 .menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .menu ul li {
     text-align: center;
-    padding: 15px;
 }
 
 .menu ul li a {
@@ -69,6 +107,7 @@ header {
     color: white;
     font-size: 1.2em;
     display: block;
+    padding: 15px;
 }
 
 .menu ul li a:hover {
@@ -82,59 +121,49 @@ header {
     font-size: 2em;
     color: white;
     cursor: pointer;
+    display: block; /* Asegura que sea visible en móvil */
 }
 
-/* Mostrar el menú cuando se activa */
+/* Mostrar el menú cuando está activo (controlado por JS) */
 .menu.active {
     display: flex;
 }
+
+/* ---- Texto Centrado ---- */
 .centrado {
-    font-family: monthserrat;
+    font-family: 'Montserrat', sans-serif; /* Corregido y con fallback */
     text-align: center;
     color: white;
     font-size: 1.5em;
+    padding: 10px 0; /* Añadir algo de padding */
 }
-/* Estilos para pantallas grandes */
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        width: auto;
-        background: none;
-    }
 
-    .menu ul {
-        display: flex;
-    }
-
-    .menu ul li {
-        padding: 0;
-    }
-
-    .menu ul li a {
-        padding: 10px 20px;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
- .card {
-  width: fit-content;
-  height: fit-content;
-  background-color: rgb(238, 238, 238, 0.055);
+/* ---- Estilos de Tarjetas (Card) ---- */
+.card {
+  width: fit-content; /* El ancho se ajusta al contenido */
+  max-width: 100%;    /* Pero no más ancho que su contenedor en móviles */
+                      /* Si .contenedor tiene gap, esto se ajustará bien */
+  height: fit-content;/* La altura se ajusta al contenido */
+  background-color: rgba(238, 238, 238, 0.055); /* Ligeramente transparente */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 25px 25px;
-  gap: 20px;
+  justify-content: center; /* O flex-start si el contenido varía mucho en altura */
+  padding: 20px;
+  gap: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  border-radius: 8px; /* Bordes redondeados para las tarjetas */
+}
+.card img { /* Estilo específico para imágenes dentro de una tarjeta */
+    max-width: 100%; /* Ya heredado, pero puede ser más específico */
+    /* Por ejemplo, si quieres imágenes de tamaño fijo dentro de la tarjeta: */
+    /* width: 150px; */
+    /* height: 150px; */
+    /* object-fit: cover; */
 }
 
-}
 
-/* for all social containers*/
+/* ---- Contenedores de Redes Sociales ---- */
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -191,9 +220,46 @@ header {
     transform: translateY(-50px);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+
+/* ---- Media Queries para Pantallas Grandes (Tablets y Escritorio) ---- */
+@media (min-width: 768px) {
+    header {
+        padding: 15px 20px; /* Restaura padding horizontal para pantallas grandes */
+    }
+
+    .menu {
+        display: flex;          /* Muestra el menú */
+        position: static;       /* Vuelve a flujo normal */
+        flex-direction: row;    /* Menú horizontal */
+        width: auto;            /* Ancho automático */
+        background: none;       /* Sin fondo */
+    }
+
+    .menu ul {
+        display: flex;          /* Items en fila */
+    }
+
+    .menu ul li {
+        padding: 0;             /* Quita padding extra de li */
+    }
+
+    .menu ul li a {
+        padding: 10px 20px;     /* Padding para items del menú desktop */
+        font-size: 1em;         /* Ajusta tamaño de fuente si es necesario */
+    }
+
+    .menu-toggle {
+        display: none;          /* Oculta el botón hamburguesa */
+    }
+
+    .card {
+      
+        max-width: 350px; /* Por ejemplo, un ancho máximo más generoso para tarjetas en desktop */
+    }
 }
