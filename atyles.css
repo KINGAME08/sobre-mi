@@ -11,7 +11,7 @@ body {
 
 .contenedor {
     position: absolute;
-  top: 135%;
+  top: 138%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.5);
@@ -25,6 +25,25 @@ body {
   gap: 20px;
   width: 85%;
   max-width: 900px;
+  margin-top: 50px; 
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.titulo-principal {
+  font-size: 1.5em;
+  color: rgb(69, 0, 116);
+  margin-bottom: 0;
+  font-family: cursive;
+  text-shadow: rgb(154, 250, 154) 0px 0px 20px;
 }
 .contenedor > h1,
 .contenedor > h3,
@@ -150,7 +169,7 @@ header {
 }
 
 .card {
-    margin-top: 50px;
+  margin-top: 50px;
   width: max-content;
   height: max-content;
   background-color: rgba(238, 238, 238, 0.055);
