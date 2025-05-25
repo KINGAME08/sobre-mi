@@ -150,8 +150,9 @@ header {
 }
 
 .card {
-  width: fit-content;
-  height: fit-content;
+    margin-top: 50px;
+  width: max-content;
+  height: max-content;
   background-color: rgba(238, 238, 238, 0.055);
   display: flex;
   align-items: center;
