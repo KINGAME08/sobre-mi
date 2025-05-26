@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>musica</title>
     <link rel="stylesheet" href="stylesmusica.css">
-    <!-- MOVIDO EL STYLE INTERNO AL HEAD PARA MEJOR ORGANIZACIÓN, AUNQUE LO IDEAL ES QUE TODO ESTÉ EN stylesmusica.css -->
+   
     <style>
         body {
             background: url('drem.jpg');
@@ -23,20 +23,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-bottom: 20px; /* Mantenido, pero considera si es necesario globalmente o por sección */
+            padding-bottom: 20px; 
         }
         .vinyl {
             height: 150px;
-            margin-left: 55px; /* Hace que el vinilo se asome por la izquierda */
+            margin-left: 55px; 
             padding: 10px;
             animation: spin 1.88s linear infinite;
-            position: absolute; /* Se posicionará relativo al .recordPlayer o .vinylCover si tienen position no-static */
+            position: absolute; 
         }
         .vinylCover {
             height: 150px;
-            position: relative; /* Importante para que .vinyl (absolute) se posicione respecto a este y para z-index */
-            z-index: 1; /* Asegura que la carátula esté sobre el vinilo */
-            margin-right: 55px; /* Compensa el margin-left del vinilo para centrar el conjunto */
+            position: relative;
+            z-index: 1; 
+            margin-right: 55px;
         }
     </style>
 </head>
@@ -57,8 +57,7 @@
         </nav>
     </header>
   <main>
-        <div class="centrado"> <!-- Este div parece que centra el contenedor principal -->
-            <!-- INICIO DEL ÚNICO CONTENEDOR PRINCIPAL -->
+        <div class="centrado">
             <div class="contenedor">
                 <h1>musica</h1>
                 <br>
@@ -77,9 +76,8 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Two Time" loading="lazy">
+                    <img class="vinylCover" src="twotime.jpg" alt="Carátula Two Time" loading="lazy">
                 </div>
-                <!-- PÁRRAFO MOVIDO DENTRO DE LA SECCIÓN POP Y DENTRO DEL CONTENEDOR -->
                 <p>el es un artista que expresa lo raro y lo desconocido, reconocido por los videos de sus
                     canciones las cuales son raras en parte bizarras pero con un toque unico de el que lo hace
                     sobresaltar de los demas artistas de pop.</p>
@@ -93,9 +91,9 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Homage" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="homage.jpg" alt="Carátula Homage" loading="lazy">
                 </div>
-                <!-- PÁRRAFO MOVIDO DENTRO DE LA SECCIÓN DREAMCORE Y DENTRO DEL CONTENEDOR -->
+        
                 <p>la cancion me gusta mucho por el sentimiento de nostalgia y de confucion que me genera, me recuerda mucho
                     al 2019 cuando estaba de moda el dreamcore por la pandemia de covid-19.</p>
                 <br>
@@ -110,9 +108,8 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Never" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="maclo.jpg" alt="Carátula Never" loading="lazy"> 
                 </div>
-                <!-- PÁRRAFO MOVIDO DENTRO DE LA SECCIÓN WEIRDCORE Y DENTRO DEL CONTENEDOR -->
                 <p>la cancion me gusta debido al ritmo melancolico, sombrio y el filtro de voz de una radio y los gritos
                     que parecen de sufrimiento, desesperacion y de soledad.</p>
                 <br>
@@ -125,11 +122,11 @@
                     hay muchos artistas muy reconocidos que han creado canciones con este genero.</p>
                 <p>mi artista favotito es kikuo por sus canciones movidas, cada una con un sentimiendo de pormedio
                     y con una historia ya sea tragica o alegre.</p>
-                <p>mi cancion favorita de kikuo es la de "The End - The End"</p> <!-- Asumo que te refieres a una canción de Kikuo, quizás "Kikuo - The End"? -->
+                <p>mi cancion favorita de kikuo es la de "Kikuo - 猫の食卓(mesa de comedor de los gatos)"</p>
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Kikuo" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="cato.jpg" alt="Carátula Kikuo" loading="lazy">
                 </div>
                 <p>la cancion me gusta debido al ritmo alegre y alegre, la melodia es muy cuave y las melodias altas y bajas</p>
                 <br>
@@ -137,7 +134,7 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Popipo" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="popipo.jpg" alt="Carátula Popipo" loading="lazy">
                 </div>
                 <br>
                 <br>
@@ -151,7 +148,7 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula Gimme Chocolate" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="choco.jpg" alt="Carátula Gimme Chocolate" loading="lazy">
                 </div>
                 <br>
                 <br>
@@ -159,7 +156,7 @@
                 <br>
                 <div class="recordPlayer">
                     <img class="vinyl" src="vinyl-black.png" alt="Vinilo girando" loading="lazy">
-                    <img class="vinylCover" src="loop.jpg" alt="Carátula BxMxC" loading="lazy"> <!-- Deberías cambiar loop.jpg por la carátula real -->
+                    <img class="vinylCover" src="BxMxC.jpg" alt="Carátula BxMxC" loading="lazy">
                 </div>
                 <br>
                 <br>
