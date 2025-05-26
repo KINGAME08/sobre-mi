@@ -8,7 +8,24 @@
 body {
     font-family: 'Montserrat', Arial, sans-serif;
 }
-
+spin animation {
+    transform: rotate(-107.169deg);
+}
+element.style {
+}
+.blurbs img, .blurbs iframe {
+    max-width: 100% !important;
+}
+.vinyl {
+    height: 150px;
+    margin-left: 55px;
+    padding: 10px;
+    animation: spin 1.88s linear infinite;
+    position: absolute;
+}
+img {
+    border-style: none;
+}
 .contenedor {
     position: absolute;
   top: 150%;
