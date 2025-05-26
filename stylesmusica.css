@@ -23,6 +23,20 @@ element.style {
     animation: spin 1.88s linear infinite;
     position: absolute;
 }
+element.style {
+}
+.blurbs img, .blurbs iframe {
+    max-width: 100% !important;
+}
+.vinylCover {
+    height: 150px;
+    position: relative;
+    z-index: 1;
+    margin-right: 55px;
+}
+img {
+    border-style: none;
+}
 img {
     border-style: none;
 }
