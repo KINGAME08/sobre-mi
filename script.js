@@ -24,3 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
         console.warn("Elementos de la card no encontrados: #toggle-card-button o #contact-card");
     }
 });
+function triggerEmailSend() {
+    const userMessageContent = document.getElementById('userEmailBody').value;
+    const emailRecipient = 'king220811@gmail.com';
+    const emailSubject = encodeURIComponent('Consulta desde la web: Mi Mensaje');
+
+    const mailtoUri = `mailto:${emailRecipient}?subject=${emailSubject}&body=${encodeURIComponent(userMessageContent)}`;
+
+    window.location.href = mailtoUri;
+}
