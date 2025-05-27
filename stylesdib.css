@@ -6,7 +6,63 @@
 }
 
 body {
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+    background-color: #eaf1f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.email-form-wrapper {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+
+.form-title {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.message-input-area {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #c9d8e7;
+    border-radius: 6px;
+    font-size: 17px;
+    resize: vertical;
+    min-height: 150px;
+    box-sizing: border-box;
+}
+
+.send-button {
+    background-color: #28a745;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 19px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.send-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.info-text {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #7f8c8d;
 }
 
 .contenedor {
