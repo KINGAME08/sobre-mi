@@ -17,13 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (toggleCardButton && contactCard) {
         toggleCardButton.addEventListener("click", function () {
             contactCard.classList.toggle("visible");
-            // Añadir/quitar clase al botón para cambiar la dirección de la flecha (vía CSS)
             toggleCardButton.classList.toggle("card-is-visible"); 
         });
     } else {
         console.warn("Elementos de la card no encontrados: #toggle-card-button o #contact-card");
     }
 });
+
+// Envío de correo por mailto
 function triggerEmailSend() {
     const userMessageContent = document.getElementById('userEmailBody').value;
     const emailRecipient = 'king220811@gmail.com';
@@ -33,13 +34,22 @@ function triggerEmailSend() {
 
     window.location.href = mailtoUri;
 }
-const imagen = document.getElementById("imagen");
-const audio = document.getElementById("audio");
 
-imagen.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-  } else {
-    audio.pause();
-  }
-});
+// Lógica de audio: reproducir solo una canción a la vez
+function playAudio(id) {
+    const audios = document.querySelectorAll('audio');
+
+    audios.forEach(audio => {
+        if (audio.id !== id) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    });
+
+    const audio = document.getElementById(id);
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
