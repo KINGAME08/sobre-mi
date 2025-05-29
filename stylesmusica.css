@@ -17,7 +17,7 @@ element.style {
     max-width: 100% !important;
 }
 .vinyl {
-    height: 175px;
+    height: 180px;
     margin-left: 55px;
     padding: 10px;
     animation: spin 1.88s linear infinite;
