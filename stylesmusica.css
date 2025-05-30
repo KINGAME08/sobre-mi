@@ -7,78 +7,26 @@
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
-}
-spin animation {
-    transform: rotate(-107.169deg);
-}
-element.style {
-}
-.blurbs img, .blurbs iframe {
-    max-width: 100% !important;
-}
-.vinyl {
-    height: 180px;
-    margin-left: 55px;
-    padding: 10px;
-    animation: spin 1.88s linear infinite;
-    position: absolute;
-}
-element.style {
-}
-.blurbs img, .blurbs iframe {
-    max-width: 100% !important;
-}
-.play-button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    padding-top: 90px;
 }
 
-.play-button:hover {
-  background-color: #555;
-}
-
-.vinylCover {
-    height: 150px;
-    position: relative;
-    z-index: 1;
-    margin-right: 55px;
-}
-img {
-    border-style: none;
-}
-img {
-    border-style: none;
-}
 .contenedor {
-    position: absolute;
-  top: 160%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  width: 85%;
-  max-width: 900px;
-  margin-top: 50px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    overflow: visible;
-
+  border-radius: 20px;
+  color: #bbff00;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin: wrap;
+}
+.video-embed-container, .playlist-embed-container {
+    position: relative; padding-bottom: 56.25%; 
+    height: 0; overflow: hidden; width: 100%;
+}
+.video-embed-container iframe, .playlist-embed-container iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border: none; 
 }
 .logo {
   display: flex;
@@ -98,18 +46,18 @@ img {
   font-family: cursive;
   text-shadow: rgb(154, 250, 154) 0px 0px 20px;
 }
-.contenedor > h1,
-.contenedor > h3,
-.contenedor > p {
-    width: 100%; 
-    text-align: center;
+.contenedor h1,
+.contenedor h3,
+.contenedor p {
+  margin: 20px 0;
+  line-height: 1.6;
 }
-img { 
-  max-width: 60%;
+.contenedor img {
+  max-width: 100%;
   height: auto;
-  display: block; 
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.363);
 }
 
 .galeria-container {
@@ -169,7 +117,7 @@ header {
 }
 
 .menu ul li a:hover {
-    background: #555;
+    background: #55555550;
 }
 
 .menu-toggle {
@@ -222,7 +170,7 @@ header {
   margin-top: 50px;
   width: max-content;
   height: max-content;
-  background-color: rgba(238, 238, 238, 0.055);
+  background-color: rgba(238, 238, 238, 0.342);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,7 +178,8 @@ header {
   gap: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
   border-radius: 8px;
-  flex-direction: column; 
+  flex-direction: row;
+  margin: 0 auto;
 }
 
 .card img {
@@ -241,7 +190,7 @@ header {
   width: 52px;
   height: 52px;
   border-radius: 5px;
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(45, 44, 138, 0.979);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,7 +289,7 @@ header {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: rgba(51, 51, 51, 0.95);
+        background-color: rgb(101, 0, 141);
         transform: translateY(100%);
         transition: transform 0.4s ease-in-out;
         z-index: 1001;
@@ -408,8 +357,8 @@ header {
         width: fit-content; 
         max-width: 350px;
         height: fit-content;
-        background-color: rgba(238, 238, 238, 0.055);
-        flex-direction: column;
+        background-color: rgba(238, 238, 238, 0.342);
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 20px;
@@ -419,6 +368,7 @@ header {
         transition: none;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
+        margin: 0 auto;
     }
 
     .socialContainer {
