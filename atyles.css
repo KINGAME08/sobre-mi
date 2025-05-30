@@ -7,17 +7,19 @@
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
-    padding-top: 90px;
+    padding-top: 100px;
 }
 
 .contenedor {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.418);
   border-radius: 20px;
   color: #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.151);
+  text-align: center;
+  margin-top: 100px;  
 }
 .logo {
   display: flex;
@@ -44,11 +46,13 @@ body {
   line-height: 1.6;
 }
 .contenedor img {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
-  margin: 20px 0;
+  margin: 10px auto;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255 , 255, 0.2);
+
+
 }
 
 .galeria-container {
@@ -161,7 +165,7 @@ header {
   margin-top: 50px;
   width: max-content;
   height: max-content;
-  background-color: rgba(238, 238, 238, 0.055);
+  background-color: rgba(238, 238, 238, 0.342);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,7 +173,8 @@ header {
   gap: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
   border-radius: 8px;
-  flex-direction: column; 
+  flex-direction: row;
+  margin: 0 auto;
 }
 
 .card img {
@@ -180,7 +185,7 @@ header {
   width: 52px;
   height: 52px;
   border-radius: 5px;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(49, 43, 138);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,12 +279,12 @@ header {
         display: flex;
     }
 
-    .card {
+  .card {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: rgba(51, 51, 51, 0.95);
+        background-color: rgb(101, 0, 141);
         transform: translateY(100%);
         transition: transform 0.4s ease-in-out;
         z-index: 1001;
@@ -293,7 +298,6 @@ header {
         gap: 10px;
         height: auto;
     }
-
     .card.visible {
         transform: translateY(0);
     }
@@ -341,14 +345,14 @@ header {
         display: none;
     }
 
-    .card {
+     .card {
         position: static;
         transform: none;
         width: fit-content; 
         max-width: 350px;
         height: fit-content;
-        background-color: rgba(238, 238, 238, 0.055);
-        flex-direction: column;
+        background-color: rgba(238, 238, 238, 0.342);
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 20px;
@@ -358,8 +362,8 @@ header {
         transition: none;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
+        margin: 0 auto;
     }
-
     .socialContainer {
         width: 52px;
         height: 52px;
