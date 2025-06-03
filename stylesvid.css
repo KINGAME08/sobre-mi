@@ -18,7 +18,7 @@ max-width: 800px;
   padding: 40px 20px;
   background-color: rgba(255, 255, 255, 0.418);
   border-radius: 10px;
-  color: #fff;
+  color: #ffcece;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.151);
   text-align: center;
   margin-top: 100px;
@@ -118,7 +118,7 @@ content: '';
 
 .titulo-principal {
   font-size: 1.5em;
-  color: rgb(69, 0, 116);
+  color: rgb(193, 100, 255);
   margin-bottom: 0;
   font-family: cursive;
   text-shadow: rgb(154, 250, 154) 0px 0px 20px;
