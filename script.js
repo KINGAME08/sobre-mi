@@ -12,6 +12,24 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.warn("Elementos del menú no encontrados: #menu-toggle o #menu");
     }
+     document.addEventListener('click', function(event) {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (menu.classList.contains('active') && !isClickInsideMenu && !isClickOnToggle) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Opcional: Cerrar menú al hacer clic en un enlace del menú (para SPAs o si el menú ocupa toda la pantalla)
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
 
     // Lógica para mostrar/ocultar la card de contactos
     if (toggleCardButton && contactCard) {
