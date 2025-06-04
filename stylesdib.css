@@ -38,10 +38,59 @@ body {
     margin: 30px auto;
 }
 
+/* ESTILOS DEL ANTIGUO FORMULARIO MAILTO - ELIMINADOS
 .email-form-section {
     width: 100%;
     max-width: 500px;
 }
+.email-form-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+#contact-form-to-king {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+.form-group { /* Este .form-group es general, lo mantenemos si el nuevo form lo usa. El nuevo lo usa. */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px; /* Ajustado por el nuevo CSS */
+}
+/*
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+#contact-form-to-king input[type="text"],
+#contact-form-to-king textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+#contact-form-to-king textarea {
+    resize: vertical;
+}
+.button-enviar-correo {
+    padding: 12px 20px;
+    background-color: #5c007a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+.button-enviar-correo:hover {
+    background-color: #7a01a1;
+}
+*/
 
 .redes-sociales-section {
     display: flex;
@@ -59,60 +108,8 @@ body {
     color: #333;
 }
 
-.email-form-section h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
 
-#contact-form-to-king {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-#contact-form-to-king input[type="text"],
-#contact-form-to-king textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-#contact-form-to-king textarea {
-    resize: vertical;
-}
-
-.button-enviar-correo {
-    padding: 12px 20px;
-    background-color: #5c007a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    align-self: center;
-}
-
-.button-enviar-correo:hover {
-    background-color: #7a01a1;
-}
-
-.button {
+.button { /* Estilo de botón genérico, si no se usa en otro lado, considerar eliminarlo */
     display: inline-flex;
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
@@ -556,6 +553,163 @@ header {
     background-color: rgba(0,0,0,0.7);
 }
 
+
+/* --- NUEVOS ESTILOS PARA EL MODAL DE CONTACTO --- */
+.contact-form-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #555; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.contact-form-trigger-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+.contact-form-trigger-btn i {
+    margin-right: 8px;
+}
+
+
+.contact-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1050; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+    background-color: rgba(0, 0, 0, 0.75); 
+    padding: 30px 15px; 
+    box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
+}
+
+.contact-modal.visible {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-modal-content {
+    background-color: #FFFFFF; 
+    color: #333333; 
+    margin: auto;
+    padding: 30px 35px; 
+    border: 1px solid #DDD; 
+    border-radius: 10px; 
+    width: 100%;
+    max-width: 520px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: left; 
+}
+.contact-modal-content h2 {
+    text-align: center;
+    color: #333; 
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em; 
+    font-family: 'Arial', sans-serif; 
+    font-weight: 600;
+    text-shadow: none; 
+}
+.contact-modal-content p {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1em;
+    color: #555; 
+    line-height: 1.6;
+}
+
+.close-contact-modal {
+    color: #777; 
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.close-contact-modal:hover,
+.close-contact-modal:focus {
+    color: #000000; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* El .form-group general ya estaba, solo aseguro compatibilidad */
+#contact-form .form-group label { /* Especificidad para el nuevo form */
+    display: block;
+    margin-bottom: 6px; 
+    font-weight: 600; 
+    font-size: 0.9em;
+    color: #444; 
+}
+
+#contact-form .form-control {
+    width: 100%;
+    padding: 10px 14px; 
+    border: 1px solid #CCCCCC; 
+    border-radius: 5px; 
+    background-color: #FDFDFD; 
+    color: #333333; 
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
+}
+#contact-form .form-control:focus {
+    border-color: #5E8CC8; 
+    box-shadow: 0 0 0 0.15rem rgba(94, 140, 200, 0.25); 
+    outline: none;
+}
+#contact-form textarea.form-control {
+    resize: vertical; 
+    min-height: 100px; 
+}
+
+#contact-form .email-validation-error {
+    font-size: 0.8em; 
+    margin-top: 4px;
+    color: #D32F2F; 
+}
+#contact-form .char-counter {
+    display: block;
+    text-align: right;
+    font-size: 0.75em; 
+    color: #666; 
+    margin-top: 4px;
+}
+
+#contact-form .submit-contact-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4A5568; 
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+#contact-form .submit-contact-btn:hover {
+    background-color: #2D3748; 
+    transform: translateY(-2px);
+}
+/* --- FIN NUEVOS ESTILOS --- */
+
+
 @media (max-width: 767px) {
     .menu-toggle {
         display: block;
@@ -596,6 +750,9 @@ header {
     }
     .largeIcon {
         width: 22px;
+    }
+    .contact-modal-content { /* Ajuste para modal en móviles */
+        padding: 20px 25px;
     }
 }
 
