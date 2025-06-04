@@ -164,9 +164,6 @@ function triggerEmailSend() {
     const mailtoUri = `mailto:${emailRecipient}?subject=${encodeURIComponent(emailSubject + " (de " + senderName + ")")}&body=${encodeURIComponent(userMessageContent)}`;
     window.location.href = mailtoUri;
 }
-
-// Si usas el botón de submit del formulario para el mailto:
-/*
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById('contact-form-to-king');
     if (contactForm) {
@@ -176,4 +173,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-*/
