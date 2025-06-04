@@ -62,25 +62,9 @@
                 </div>
 
                 <hr class="separator">
-                <div class="email-form-section">
-                    <h2>Enviar Correo a King</h2>
-                    <form id="contact-form-to-king" action="#" method="POST"> 
-                        <div class="form-group">
-                            <label for="nombre_remitente">Tu Nombre:</label>
-                            <input type="text" id="nombre_remitente" name="nombre_remitente" placeholder="Escribe tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="asunto_correo">Asunto:</label>
-                            <input type="text" id="asunto_correo" name="asunto_correo" placeholder="Asunto del correo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje_correo">Mensaje:</label>
-                            <textarea id="mensaje_correo" name="mensaje_correo" rows="5" placeholder="Escribe tu mensaje para King" required></textarea>
-                        </div>
-                        <input type="hidden" name="destinatario" value="king@example.com">
-                        <button type="submit" class="button-enviar-correo">Enviar Mensaje</button>
-                    </form>
-                </div>
+             <button id="open-contact-form-btn" class="contact-form-trigger-btn">
+    <i class="fas fa-envelope"></i> Envíame un Mensaje
+  </button>
             </div>
         </div>
             <br>
@@ -125,6 +109,42 @@
         <a class="lightbox-next" onclick="changeImage(1)">❯</a>
         <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
+    <div id="contact-form-modal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="close-contact-modal" id="close-contact-modal-btn">×</span>
+    <h2>Contáctame</h2>
+    <p>Envíame un mensaje y te responderé lo antes posible.</p>
+    
+    <form id="contact-form" target="_blank" action="https://formsubmit.co/living4maya@gmail.com" method="POST">
+      <div class="form-group">
+        <label for="contact-name">Nombre Completo:</label>
+        <input type="text" id="contact-name" name="name" class="form-control" placeholder="Tu Nombre Completo" required maxlength="100">
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">Tu Email:</label>
+        <input type="email" id="contact-email" name="email" class="form-control" placeholder="direccion@ejemplo.com" required maxlength="150">
+        <small class="email-validation-error" style="color: red; display: none;">Por favor, introduce un email con formato válido.</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="contact-subject">Asunto:</label> 
+        <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Asunto del mensaje" required maxlength="150">
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">Tu Mensaje:</label>
+        <textarea placeholder="Escribe tu mensaje aquí..." class="form-control" id="contact-message" name="message" rows="6" required maxlength="2000"></textarea>
+        <small class="char-counter"><span id="message-char-count">0</span> / 2000 caracteres</small>
+      </div>
+      <input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto desde tu Web!">
+      <input type="hidden" name="_template" value="box"> 
+
+
+      <button type="submit" class="submit-contact-btn">Enviar Mensaje</button>
+    </form>
+  </div>
+</div>
     <script src="scriptd.js"></script>
 </body>
 </html>
